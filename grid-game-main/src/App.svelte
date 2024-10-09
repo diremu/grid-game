@@ -1,22 +1,27 @@
 <script>
   import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+  import './app.css'
+
+  let name = "Diremu"
+  let age = 19
+  let number = 0;
+
+  function addNumber () {
+    number = number + 1
+  }
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
+  <div class=" bg-red-500"> 
     <a href="https://svelte.dev" target="_blank" rel="noreferrer">
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </div>
-  <h1>Vite + Svelte</h1>
+  <h1>{name} is {number} years old</h1>
 
   <div class="card">
-    <Counter />
+    <button on:click={() => addNumber()}>{number}</button>
   </div>
 
   <p>
